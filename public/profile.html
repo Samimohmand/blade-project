@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    
+    
+    <link rel="stylesheet" href="asset/css/project.css">
+    <link rel="stylesheet" href="asset/fonts/fontawesome-free-6.4.0-web/css/all.css">
+    <!-- product all link=================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <style>
+        #profile-main-section{
+            background-color: rgb(219, 239, 220);
+            padding: 3em;
+            display: flex;
+            justify-content: space-between;
+        }
+        #profile-main-section #profile-left-side{
+            width: 35%;
+        }
+        #profile-main-section #profile-right-side{
+            width: 60%;
+        }
+        #profile-main-section #profile-left-side #profile-card{
+            width: 80%;
+            /* border: 1px solid gray; */
+            padding: 1.2em 1.8em 1.8em;
+            border-radius: 3px;
+            position: relative;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #profile-left-side #user-status{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            border: 2px solid #1dbf73;
+            border-radius: 45%;
+            padding: 2px 10px;
+            font-size: 0.7em;
+            color:rgb(2, 172, 104); 
+            display: flex;
+            justify-content: center;
+        }
+        #profile-left-side #profile-card img{
+            width: 120px;
+            border-radius: 50%;
+        }
+        #profile-left-side #profile-card #user-info{
+            display: flex;
+            margin: 0.7em 0;
+        }
+        #profile-card #user-info #profile-name{
+            font-size: 1em;
+            font-weight: 900;
+            margin-right: 9px;
+        }
+        #profile-card #user-info #user-new{
+            background-color: rgb(255, 98, 173);;
+            color: white;
+            padding: 1px 5px;
+            font-size: 0.6em;
+            border-radius: 3px;
+            line-height: 1.6em;
+        }
+        #profile-card #user-username{
+            color: rgb(79, 79, 79);
+            font-size: 0.9em;
+        }
+        #profile-card #review-div{
+            width: 100%;
+            border: 1.5px solid rgb(86, 86, 86);
+            padding: 4px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2em 0 1.3em;
+            border-radius: 3px;
+        }
+        #profile-card #review-div a{
+            color: rgb(53, 53, 53);
+            font-size: 0.9em;
+            font-weight: 900;
+        }
+        #profile-card #user-location-info{
+            border-top: 1px solid rgb(96, 96, 96);
+            padding-top: 1.3em;
+            width: 100%;
+        }
+        #profile-card #user-location-info #location ,
+        #profile-card #user-location-info #user-member{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            height: 35px;
+        }
+        #profile-card #user-location-info .icon-div{
+            display: flex;
+            align-items: center;
+        }
+        #profile-card #user-location-info .icon-div i{
+            margin: 0 10px -5px 0;
+            display: inline-block;
+        }
+        #profile-card #user-location-info .icon-div .user-location-span{
+            font-size: 0.9em;
+            color: rgb(21, 21, 21);
+        }
+        #profile-card #user-location-info  .user-country{
+            font-weight: 600;
+        }
+        /* .............right side of user profile.................. */
+        #profile-right-side #Gig-up-row{
+            width: 100%;
+            /* border:1px solid rgb(32, 32, 32); */
+            padding: 1.8em 1.8em;
+            background-color: white;
+            border-radius: 2px;
+            margin-bottom: 3em;
+        }
+        #profile-right-side #Gig-up-row a{
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-right: 18%;
+            display: inline-block;
+            margin-bottom: 10px;
+            color: black;
+            text-transform: uppercase;
+            padding-bottom: 1.46em;
+        }
+        #profile-right-side #Gig-up-row a:hover{
+            border-bottom:3.7px solid #1dbf73;
+        }
+        #profile-right-side #second-gig-row{
+            width: 100%;
+            display: flex;
+        }
+        #profile-right-side #second-gig-row a{
+            color: black;
+        }
+        #profile-right-side #second-gig-row .card{
+            background-color:#fff;
+            width: 300px;
+            margin-right: 1em;
+            padding: 1em;
+            border-radius: 2px;
+            /* border: 1px solid rgb(74, 74, 74); */
+        }
+        #second-gig-row .card p{
+            font-size: 0.9em;
+        }
+        #second-gig-row .card h2{
+            font-size: 1em;
+            margin: 2em 0;
+        }
+        #second-gig-row .card #price-gig-para{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .card #price-gig-para #three-dot{
+            font-size: 3em;
+            margin-top: -10px;
+            color: gray;
+        }
+        .card #price-gig-para #gig-price{
+            font-size: 1.3em;
+            margin-left: -90px;
+            margin-top: -0px;
+            font-weight: 600;
+        }
+        #second-gig-row .scard{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #second-gig-row .scard #add-card-div{
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 3em;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #second-gig-row .scard p{
+            font-size: 1em;
+            color: #3b3b3b;
+            font-weight: 600;
+        }
+        @media screen and (max-width: 1000px){
+            #profile-main-section{
+            padding: 1.5em;
+            }
+            #second-gig-row .scard p{
+                font-size: 0.9em;
+            }
+            #profile-main-section #profile-left-side #profile-card{
+            width: 90%;
+            padding: 1em 1.2em 1.6em;
+            }
+
+        }
+        @media screen and (max-width: 900px){
+                #profile-right-side #second-gig-row{
+                flex-direction: column;
+            }
+            #profile-right-side #Gig-up-row{
+                padding: 1.4em 1.4em;
+                margin-bottom: 1.5em;
+            }
+            #profile-right-side #second-gig-row .card{
+                background-color:#fff;
+                width: 100%;
+                padding: 1em 3em;
+                border-radius: 2px;
+                border: 1px solid rgb(74, 74, 74);
+            }
+            #profile-right-side #second-gig-row .card:first-child{
+                margin-bottom: 0.9em;
+            }
+            #second-gig-row .card h2{
+                font-size: 0.9em;
+                margin: 1em 0;
+            }
+            #second-gig-row .card p{
+                font-size: 0.8em;
+            }
+            #profile-right-side #Gig-up-row a{
+                font-size: 0.9em;
+                margin-right: 15%;
+                padding-bottom: 5px;
+            }
+            #profile-main-section #profile-left-side #profile-card{
+                width: 100%;
+                padding: 1em 1.2em 1.6em;
+            }
+            #profile-card #user-location-info  .user-country{
+            font-size: 0.83em;
+            }
+            #profile-card #user-location-info .icon-div .user-location-span{
+            font-size: 0.78em;
+            }
+            .fa-map-marker-alt , .fa-user{
+                font-size: 0.9em;
+                margin-right: 0.2em;
+            }
+            #profile-card #user-location-info .icon-div i{
+            margin: 0 4px -5px 0;
+            }
+
+        }
+        @media screen and (max-width: 600px){
+            #profile-main-section{
+                flex-direction: column;
+        }
+        #profile-main-section #profile-left-side{
+                width: 80%;
+                margin: 0 auto 1em;
+        }
+        #profile-main-section #profile-right-side{
+            width: 80%;
+            margin: auto;
+        }
+        #profile-right-side #Gig-up-row a:last-child{
+                margin-right: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav bar section starts here -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" class="logo"><img src="asset/image/logo.png" alt=""></a>
+           
+        </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./our project design the product part/index.html">shop product</a></li>
+              
+                <li><a href="measage.html">message</a></li>
+                <li><a href="measage.html">All Order </a></li>
+              
+            </ul>
+        </div>
+        <div class="navbar-center2">
+            <div class="dropdown">
+              <button class="dropdown-btn">Menu</button>
+              <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="./our project design the product part/index.html">Shop Product</a>
+                <a href="job.html">Section</a>
+                <a href="measage.html">For User</a>
+                <a href="./saller_page/index.html">For Designer</a>
+                <a href="./saller_page/index.html">Admin</a>
+              </div>
+            </div>
+          </div>
+
+        <div class="navbar-right">
+            <div class="online">
+                <img src="asset/image/user-1.png" alt="" class="nav-profile-img" onclick="toggleMenu()">
+            </div>
+        </div>
+        <!-- profile menue of engineer      ---- -->
+
+        <div class="profile-menu-wrap" id="profileMenu">
+            <div class="profile-menu">
+                <div class="user-info">
+                    <img src="asset/image/user-1.png" alt="">
+                    <div>
+                        <h3>M_ullah mohamadi</h3>
+                        <a href="social website/profile.html">see your profile</a>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="profile-menu-link">
+                    <img src="asset/image/feedback.png" alt="">
+                    <p>Give feedback</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="asset/image/setting.png" alt="">
+                    <p>setting & privacy</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="asset/image/help.png" alt="">
+                    <p>help & support</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="asset/image/display.png" alt="">
+                    <p>display & Accessibility</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="profile-menu-link">
+                    <img src="asset/image/logout.png" alt="">
+                    <p>logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-------------------     end of the profile section  -->
+    <section id="profile-main-section">
+        <div id="profile-left-side">
+            <div id="profile-card">
+                <span id="user-status"> .Online</span>
+
+                <img src="asset/image/user-img/user3.jpg" alt="">
+
+                <div id="user-info">
+                    <span id="profile-name">Samiullah M</span>
+                    <span id="user-new">New</span>
+                </div>
+
+                <b id="user-username">@samikhan2</b>
+
+                <div id="review-div">
+                    <a href="">Preview Memar Profile</a>
+                </div>
+                <div id="user-location-info">
+                    <div id="location">
+                        <div class="icon-div">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="user-location-span">From</span></div>
+                        <span class="user-country">Afghanistan</span> 
+                    </div>
+                    <div id="user-member">
+                        <div class="icon-div">
+                            <i class="fas fa-user"></i>
+                            <span class="user-location-span">Member since</span></div>
+                        <span class="user-country" >Apr 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="profile-right-side">
+            <div id="Gig-up-row">
+                <a href="" class="gig-links">Upload Design</a>
+                <a href="" class="gig-links">DraftS</a>
+            </div>
+            <div id="second-gig-row">
+                <a href="">
+                    <div class="card fcard">
+                        <p id="gig-card-para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis!
+                        </p>
+                        <h2>I will dow your design development </h2>
+                        <p id="price-gig-para"><span id="three-dot">...</span> STARTING AT <span id="gig-price">$70</span></p>
+                    </div>
+                </a>
+                <div class="card scard" >
+                    <a href=""><div id="add-card-div">+</div></a>
+                    <P>Create  a new Gig</P>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+   
+
+    <!-- footer -->
+    <footer id="my-footer">
+        <div id="footer-wraper">
+            <div class="clumn">
+                <img src="asset/image/logo.png" alt="the logo">
+                <h4>About company</h4>
+                <p><strong>construction</strong></p>
+
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+                <p>Lorem ipsum dolor sit, amet consectetur<br>
+                    Praesentium eveniet dolore culcupiditate<br>
+                </p>
+                <div id="follwers" class="clumn">
+                    <h4>folow as</h4>
+                    <div id="socialink">
+                        <i class="fab  fa-facebook-f"></i>
+                        <i class="fab  fa-twitter"></i>
+                        <i class="fab  fa-instagram"></i>
+                        <i class="fab  fa-pinterest-p"></i>
+                        <i class="fab  fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clumn">
+                <h4>explore links</h4>
+                <div id="about-links">
+                    <a href="">about</a>
+                    <a href="">project info</a>
+                    <a href="">privacy polcy</a>
+                    <a href="">term and condition </a>
+                    <a href="">contact us</a>
+                    <a href="">our team</a>
+                    <a href="">our service</a>
+                    <a href="">site mape</a>
+                    <a href="">help center</a>
+                </div>
+            </div>
+
+
+            <div class="clumn">
+                <h4>latest post</h4>
+                <div id="about-links">
+                    <a href="">call me</a>
+                    <a href="">sing in </a>
+                    <a href="">file upload</a>
+                    <a href="">my prject list</a>
+                    <a href="">track my order </a>
+                    <a href="">help</a>
+                </div>
+            </div>
+
+            <div class="clumn my-border">
+                <h4>Contact Us</h4>
+                <p>join to our website</p>
+                <i class="fas fa-map-marker-alt"></i>afghanistan 2th strate <br>
+                <i class="fab fa-google"></i>mohammadi@gmail.com <br>
+                <i class="fas fa-phone"></i>+93795872861 <br>
+            </div>
+
+        </div>
+        <div id="copyright-wraper">
+            <p>&copy;create and design your archtecture</p>
+        </div>
+    </footer>
+
+    <script src="asset/javascript/profile.js"> </script>
+    <script src="asset/javascript/profile_drop.js"></script>
+    <script src="asset/javascript/main.js"></script>
+    <!-- <script src="asset/javascript/right_click.js"></script> -->
+
+</body>
+
+</html>
