@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-   
+    <base href="/public">
+  
     
-   
     <link rel="stylesheet" href="{{asset('/asset/css/project.css')}}">
-    
-
+   
 
    
 </head>
-
 <body>
-@include("myapp.layouts.header")
-<section id="content-dashbord">
+    
+
+@include('myapp.layouts.header')
+
+
+  <!-- main content  section-->
+  <section id="content-dashbord">
         <div id="sidebarstaky">
             <div id="side-card">
                 <div id="side-card-header">
@@ -52,67 +55,67 @@
         <div id="sidebarcontent">
          
             <div class="container12">
-                <h1>Upload Your Design Here</h1>
-                <p>To Upload Design You Should Full All Input Fields</p>
-                <form>
+                <h1 style="text-align: center;">Add your product </h1>
+                
+                <form  action="{{'/update_product_confirm',$product->id}}" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <div class="row-upload">
                     <div class="column">
-                      <label for="Title">Title</label>
+                      <label for="Title">product Title</label>
                       <input
                         type="text"
-                        name="Title"
+                        name="title"
                         id="Title"
-                        placeholder="Enter Design Title"
+                        placeholder="write a title"
+                        required=""
+                        value="{{$product->title}}"
                       />
                     </div>
-                   
+                    <div class="column">
+                      <label for="Id">Quantity</label>
+                      <input  value="{{$product->quantity}}" required="" type="number" name="quantity" min="0" id="Id" placeholder="Enter Quantity " />
+                    </div>
                   </div>
                   <div class="row-upload">
                     <div class="column">
-                      <label for="Category">CategoryID </label>
-                      <select id="Category" name="Category">
-                        <option value="House">House</option>
-                        <option value="Shool">Shool</option>
-                        <option value="Apartement">Apartement</option>
+                      <label for="Category">Product Category  </label>
+                      <select id="Category" name="catagory"   required="">
+                      <option  >{{ $product->catagory}}</option>
+
+                      @foreach($catagory as $catagory)
+                    <option  value="{{ $catagory->Catagory_name}}" >{{ $catagory->Catagory_name}}</option>
+                    @endforeach
                       </select>
                     </div>
                     <div class="column">
                       <label for="Price">Price</label>
                       <input
                         type="number"
-                        name=""
+                        name="price"
                         id="Price"
                         placeholder="Enter Price here"
+                        required=""
+                        value="{{$product->price}}"
                       />
                     </div>
                   </div>
                   <div class="row-upload">
                     <div class="column">
-                      <label for="Category">Design image </label>
-                      <input type="file" name="" id="file" placeholder="Upload Design" />
+                      <label for="Category">change product image </label>
+                      <input  value="{{$product->image}}" type="file"   required="" name="image" id="file" placeholder="Upload Design" />
                     </div>
                     <div class="column">
                       <label for="Description">Description</label>
-                      <textarea
-                        id="description"
-                        placeholder="Write Essential Information About Your Design"
-                        rows="2"
-                      ></textarea>
+                    <input type="text"  value="{{$product->description}}"  required="" name="description" id="description">
                     </div>
                   </div>
-                  <button class="upload-btn">Submit</button>
+                  <button type="submit" class="upload-btn">Update product</button>
                 </form>
               </div>
 
-            <!--  -->
         </div>
     </section>
-    @include("myapp.layouts.footer")
 
-    <script src="asset/javascript/profile.js"> </script>
-    <script src="asset/javascript/profile_drop.js"></script>
-    <script src="asset/javascript/main.js"></script>
-
+@include('myapp.layouts.footer')    
 </body>
 </html>
-    

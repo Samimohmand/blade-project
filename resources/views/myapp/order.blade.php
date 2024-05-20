@@ -28,15 +28,16 @@
                     </div>
                 </div>
                 <div id="side-card-menu">
-                    <ul>
-                        <li><a href=""><img src="asset/icons/icons8-dashboard-layout-50.png" alt="">Dashoard</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-order-50.png" alt="">Order</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-category-50.png" alt="">Category</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-category-50.png" alt="">Add Category</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-message-50.png" alt="">Messages</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-online-money-transfer-50.png" alt="">Payment</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-setting-50.png" alt="">Setting</a></li>
-                        <li><a href=""><img src="asset/icons/icons8-logout-50.png" alt="">Logout</a></li>
+                <ul>
+                    <li><a href="{{url('dashboard')}}"><img src="asset/icons/icons8-dashboard-layout-50.png" alt="">Dashoard</a></li>
+                        <li><a href="{{url('order')}}"><img src="asset/icons/icons8-order-50.png" alt="">Order</a></li>
+                        <li><a href="{{url('catagory')}}"><img src="asset/icons/icons8-category-50.png" alt="">Add Category</a></li>
+                        <li><a href="{{url('#')}}"><img src="asset/icons/icons8-message-50.png" alt="">Messages</a></li>
+                        <li><a href="{{url('addproduct')}}"><img src="asset/icons/icons8-online-money-transfer-50.png" alt="">Add product</a></li>
+                        <li><a href="{{url('show_product')}}"><img src="asset/icons/icons8-logout-50.png" alt="">Show product</a></li>
+                        <li><a href="{{url('setting')}}"><img src="asset/icons/icons8-setting-50.png" alt="">Setting</a></li>
+                        <li><a href="{{url('#')}}"><img src="asset/icons/icons8-logout-50.png" alt="">Logout</a></li>
+                        
                     </ul>
                 </div>
             </div>

@@ -4,33 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>our product design</title>
-    <link rel="stylesheet" href="./asset/css/product.css">
+    <link rel="stylesheet" href="{{asset('/asset/css/project.css')}}">
+    <link rel="stylesheet" href="{{asset('/asset/css/product.css')}}">
 </head>
 <body>
-  <nav  class="navbar">
-    <div class="navbar-left"> 
-       
-        <div class="search-box">
-            <img src="./asset/icons/icons8-search-24.png" >
-            <input type="text" placeholder="search">
-        </div>
-    </div>
-    <div class="navbar-center">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop product</a></li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Get idea</a></li>
-          <li><a href="#">Cart</a></li>
-          <li><a href="#">Admin</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-    </div>
-    <div class="navbar-right">
-              <a href=""><img src="./asset/icons/istockphoto-1309328823-1024x1024.jpg" alt="" class="nav-profile-img"></a>
-     
-    </div>
-</nav>
+
+    @include("myapp.layouts.header")
+
 
 <section id="list-of-all-Menue">
         <div class="navbar-center">

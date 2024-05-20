@@ -7,9 +7,9 @@
     <title>index</title>
     
     
-    <link rel="stylesheet" href="asset/css/project.css">
+    <link rel="stylesheet" href="{{asset('/asset/css/project.css')}}">
     <link rel="stylesheet" href="asset/fonts/fontawesome-free-6.4.0-web/css/all.css">
-    
+  
 </head>
 <body>
 
@@ -44,47 +44,45 @@
         </div>
         <div id="sidebarcontent">
           <div id="main-container-add-category">
-            <form action="{{url('/add_catagory')}}" method="POST" id="add-category">
-                @csrf
-                <label for="" id="category" >Add category</label>
-                <br>
-                
-                <input  type="text" name="category" >
-                <br>
-                <input  type="submit" name="submit" style="margin-left:35px; margin-top:10px;
-                background-color:#c79e23; " value="add catagory">
-            </form>
+            <h1>show the all product </h1>
           </div>
             <div id="categroy-div">
-                <h2 id="category-title">Category : </h2>
+                
                 <div id="category-table-div">
                     <table id="categroy-table">
-                        <thead>
-                            <tr>
-                               
-                                <th>Category Name</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($data as $data)
-                            <tr>
-                               
-                                <td>{{$data->Catagory_name}}</td>
-                                <td>
-                                   <a href=""><img src="asset/icons/icons8-edit-50.png" alt=""></a> 
-                                   <a href="{{url('delete_catagory',$data->id)}}"><img src="asset/icons/icons8-delete-50.png" alt=""></a> 
-                                </td>
-                            </tr>
-                            @endforeach
-                           
-                        </tbody>
+                      <tr>
+                        <th> Title</th>
+                        <th>Description</th>
+                        <th>quantity</th>
+                        <th>Catagory</th>
+                        <th>price</th>
+                        <th>image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+
+                      </tr>
+                     @foreach($product as $product)
+                      <tr>
+                      <td>{{$product->title}}</td>
+                      <td>{{$product->description}}</td>
+                      <td>{{$product->quantity}}</td>
+                      <td>{{$product->catagory}}</td>
+                      <td>{{$product->price}}</td>
+                      <td id="image-td">
+                        <img src="/product/{{$product->image}}" >
+                      </td>
+
+                    
+                     <td><a href="{{url('update_product',$product->id)}}"><img src="asset/icons/icons8-edit-50.png" alt=""></a> </td>   
+                     <td><a href="{{url('delete_product',$product->id)}}"><img src="asset/icons/icons8-delete-50.png" alt=""></a> </td>
+                      </tr>
+                      @endforeach
                     </table>
                 </div>
             </div>
         </div>
 
-        <div id="right-side-content"></div>
+        <!-- <div id="right-side-content"></div> -->
     </section>
     @include("myapp.layouts.footer")
 </body>

@@ -1358,7 +1358,12 @@ border-radius: 3px;
     text-align: left;
   
   }
-  #categroy-div #category-table-div #categroy-table tr  td , tr th{
+  #categroy-div #category-table-div #categroy-table tr  td{
+    border-bottom: 1px solid gray;
+    padding: 10px 10px;
+    text-align: left;
+  }
+  #categroy-div #category-table-div #categroy-table tr th{
   border-bottom: 1px solid gray;
   padding: 10px 10px;
   text-align: left;

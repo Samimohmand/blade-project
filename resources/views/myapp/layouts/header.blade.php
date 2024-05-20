@@ -5,13 +5,15 @@
         </div>
         <div class="navbar-center">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./our project design the product part/product-page.html">Shop product</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('/products')}}">Shop product</a></li>
                 
-                <li><a href="../idea part/homepageidea.html">Get idea</a></li>
+                <li><a href="{{url('/idea')}}">Get idea</a></li>
                 <li><a href="#">Cart</a></li>
-                <li><a href="../Final_project In the Last Edite/profile.html">Admin</a></li>
+                <li><a href="{{url('/dashboard')}}">Admin</a></li>
                 <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                
             </ul>
         </div>
        
