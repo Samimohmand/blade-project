@@ -10,7 +10,8 @@ use App\Models\product;
 class HomeController extends Controller
 {
    public function products(){
-    return view('myapp.product-page');
+    $product=product::paginate(12);
+    return view('myapp.product-page',compact('product'));
    }
 
 
@@ -78,14 +79,36 @@ public function delete_product($id){
 
 // with this update product from dashboarde
 public function update_product($id){
+
     $product=product::find($id);
     $catagory=catagory::all();
     return view('myapp.update_product',compact('product','catagory'));
-   
-   
 
 }
 
+  public function update_product_confirm(Request $request , $id){
+    $product=product::find($id);
+    $product->title=$request->title; 
+    $product->description=$request->description;
+    $product->price=$request->price;
+    $product->catagory=$request->catagory;
+    $product->quantity=$request->quantity;
+    $image=$request->image;
+    $imagename=time().'.'.$image->getClientOriginalExtension();
+    $request->image->move('product',$imagename);
+    $product->image=$imagename;
 
+    $product->save();
+
+    return  redirect()->back();
+
+  }
+
+//   this is for show the product details 
+
+public function  product_details($id){
+    $product=product::find($id);
+    return view('myapp.product_details',compact('product'));
+}
 
 }

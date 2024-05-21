@@ -30,13 +30,14 @@
         display: flex;
         flex-direction: column;
         -ms-flex-align: stretch;
+        margin-top: 2em;
     }
     #prodeuct-container #product-card #product-para{
         font-size: 1.5em;
         text-transform: capitalize;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 600;
-        margin-bottom: 2em;
+        margin-bottom: 1.4em;
     }
     #prodeuct-container #product-card #pss{
         display: block;
@@ -97,33 +98,25 @@
     <div id="prodeuct-container">
 
 <div id="product-image">
-    <img src="{{asset('/asset/image/img-7.jpg')}}" alt="product image" >
+    <img src="/product/{{$product->image}}" alt="product image" >
 </div>
 
 <div id="product-card">
-    <p id="product-para">best choose for buying foods table</p>
+    <p id="product-para">{{$product->title}}</p>
     <span id="pss">SALE</span>
-    <span id="product-rate"> &#36  234</span>
+    <span id="product-rate"> &#36  {{$product->price}}</span>
     
     <div id="transit-div">
         <img src="car-icon.png" alt="car icon ">
-        <p id="product-para-massage">  This product will be sent to you as soon as possible.</p>
+        <p id="product-para-massage">{{$product->description}}</p>
 
     </div>
     
     <div id="beying-div">
-        <label for="product-quantity"> Qty : </label>
-        <select id="product-quantity" name="productQuantity">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
+          
+         <h4>Quantity</h4>
+       <h6>{{$product->quantity}}</h6>
+      
         <button>Add to Card</button>
         
     </div>

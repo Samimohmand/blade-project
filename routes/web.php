@@ -46,6 +46,8 @@ Route::get('/delete_product/{id}',[HomeController::class,'delete_product']);
 
 // with this route update the product of designer
 
-Route::get('/update_product/{id}',[HomeController::class,'update_product']);
+Route::get('update_product/{id}',[HomeController::class,'update_product']);  // not work wy 
+Route::post('update_product_confirm/{id}',[HomeController::class,'update_product_confirm']);  //not wrk why
 
-Route::post('/update_product_confirm/{id}',[HomeController::class,'update_product_confirm']);
+
+Route::get('product_details/{id}',[HomeController::class,'product_details']);

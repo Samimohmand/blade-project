@@ -6,6 +6,7 @@
     <title>our product design</title>
     <link rel="stylesheet" href="{{asset('/asset/css/project.css')}}">
     <link rel="stylesheet" href="{{asset('/asset/css/product.css')}}">
+    
 </head>
 <body>
 
@@ -31,10 +32,11 @@
     </section>
 
       <section id="all-product">
+        @foreach($product as $products)
         <div class="product-class">
-            <a href="./product/product.html"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
+            <a href="{{url('product_details',$products->id)}}"><img src="product/{{$products->image}}" alt=""></a>
             <div class="product-details">
-                <h3 class="product-name">chair</h3>
+                <h3 class="product-name">{{$products->title}}</h3>
                 
                 <div class="star-rating">
                   <span class="star-icon">&#9733;</span>
@@ -43,201 +45,20 @@
                   <span class="star-icon">&#9733;</span>
                   <span class="star-icon">&#9733;</span>
                 </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
+                <p class="product-description">{{$products->description}}</p>
+                <p class="product-price">${{$products->price}}</p>
               </div>
         </div>
 
-        <div class="product-class">
-            <a href="./product/product.html"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
+        @endforeach
 
-        <div class="product-class">
-            <a href="#"><img src="{{asset('/asset/product-images/imge1.jpg.jpg')}}" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
+    
 
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
         
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
 
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
+        
 
 
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
-
-
-
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-          <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
-
-
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
-
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/imge1.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
-
-
-        <div class="product-class">
-            <a href="#"><img src="./asset/product-images/2.jpg.jpg" alt=""></a>
-            <div class="product-details">
-                <h3 class="product-name">chair</h3>
-                
-                <div class="star-rating">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="product-price">$200</p>
-              </div>
-        </div>
       </section>
 
 @include("myapp.layouts.footer")

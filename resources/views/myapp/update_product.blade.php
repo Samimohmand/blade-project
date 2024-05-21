@@ -55,9 +55,9 @@
         <div id="sidebarcontent">
          
             <div class="container12">
-                <h1 style="text-align: center;">Add your product </h1>
+                <h1 style="text-align: center;">update your product </h1>
                 
-                <form  action="{{'/update_product_confirm',$product->id}}" method="POST" enctype="multipart/form-data">
+                <form  action="{{'/update_product_confirm', $product->id  }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="row-upload">
                     <div class="column">
